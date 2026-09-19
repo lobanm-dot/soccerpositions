@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find Your Space • Soccer Position Explorer</title>
+<style>
+:root{--ink:#192e38;--muted:#5a7079;--paper:#f4f6ef;--line:#dce4df;--orange:#ffcd66;--blue:#2375dc}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:ui-rounded,'Avenir Next',system-ui,sans-serif}button,select{font:inherit}button{cursor:pointer;min-height:44px;border:1px solid var(--line);background:white;color:var(--ink);border-radius:12px;padding:10px 15px;font-weight:700}button:hover{border-color:#547b69;background:#eef5ef}button:focus-visible,select:focus-visible,svg:focus-visible{outline:3px solid #da7900;outline-offset:4px}header{max-width:1170px;margin:auto;padding:26px 28px 18px;display:flex;align-items:center;gap:16px}.badge{width:50px;height:50px;display:grid;place-items:center;background:var(--ink);color:white;font-size:28px;border-radius:16px;flex-shrink:0}h1{margin:0;font-size:clamp(26px,3vw,38px);letter-spacing:-1.4px}header p{margin:5px 0;color:var(--muted);font-size:15px}.tag{margin-left:auto;white-space:nowrap;font-size:12px;letter-spacing:1.4px;font-weight:800;color:#53705d}main{max-width:1170px;margin:auto;padding:0 28px 30px;display:grid;grid-template-columns:minmax(320px,650px) minmax(270px,1fr);gap:24px;align-items:start}.field-panel{background:#123f33;border-radius:24px;padding:16px 18px 12px;box-shadow:0 12px 28px #123f3315}.field-heading{color:#e4f7e8;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:800;letter-spacing:1px;margin:1px 5px 7px}.field-heading span:last-child{color:#c6e4d5;font-weight:500;letter-spacing:0}#pitch{display:block;width:100%;max-height:73vh;min-height:360px;touch-action:none;user-select:none;overflow:visible;border-radius:12px}#pitch text{font-family:inherit}.field-foot{text-align:center;color:#d6eadd;font-size:13px;padding-top:6px;margin:0}aside{display:grid;gap:16px}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}h2{font-size:18px;margin:0 0 12px;letter-spacing:-.3px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--muted);margin:0 0 10px}.modes{display:grid;grid-template-columns:1fr 1fr;gap:7px}.modes button{font-size:14px;padding:12px 8px}.modes button[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}#teamRule{font-size:20px;font-weight:750;line-height:1.3;margin:17px 0 5px}#teamHint{font-size:14px;color:var(--muted);line-height:1.5;margin:0}.choose{display:flex;justify-content:space-between;align-items:center;gap:10px}.choose label{font-size:14px;font-weight:700}select{max-width:65%;padding:10px;border:1px solid #cbd8ce;border-radius:10px;background:white;color:var(--ink);font-size:14px;min-height:44px}.role-title{display:flex;gap:12px;align-items:center;margin-top:20px}.number{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;font-weight:900;background:#ffcd66;color:#192e38;font-size:20px}.role-title h2{margin:0;font-size:22px}.role-title p{margin:2px 0 0;font-size:12px;color:var(--muted)}#roleAdvice{font-size:18px;line-height:1.45;margin:17px 0 12px}.remember{background:#f1f5ef;border-radius:12px;padding:12px;font-size:14px;line-height:1.5;margin:0}.scenarios{display:grid;grid-template-columns:1fr 1fr;gap:8px}.scenarios button{font-size:13px;text-align:left;padding:10px}.toggle{display:flex;gap:9px;align-items:center;font-size:14px;margin:14px 0 0;cursor:pointer}.toggle input{width:19px;height:19px;accent-color:#2375dc}.note{font-size:12px;line-height:1.6;color:var(--muted);margin:0 4px}.legend{display:flex;justify-content:center;gap:16px;color:#d6eadd;font-size:12px;margin-top:10px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#4d9afa;margin-right:5px}.dot.gold{background:#ffcd66}.player{cursor:pointer}.player .ring{stroke:#ffdd82;stroke-width:5;fill:none;opacity:0}.player.selected .ring{opacity:1}.player text{pointer-events:none}.player .body{stroke:#f5fbff;stroke-width:2.5;fill:#2375dc}.player.goalkeeper .body{fill:#ffd277;stroke:#fff3d0}.player.selected .body{stroke:#ffdd82}.label-bg{fill:#10392ee8}.label{fill:#fff;font-size:18px;font-weight:750}.jersey{fill:white;font-weight:900;font-size:23px}.goalkeeper .jersey{fill:#283c30}#ball{pointer-events:none;filter:drop-shadow(0 3px 4px #0006)}.passline{stroke:#fff2b4;stroke-width:2.5;stroke-dasharray:7 7;opacity:.8;pointer-events:none}#spot{fill:none;stroke:#ffeab1;stroke-width:2;stroke-dasharray:4 5;pointer-events:none}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:760px){header{padding:18px 16px 14px}.tag{display:none}main{padding:0 12px 24px;grid-template-columns:1fr;gap:14px}.field-panel{padding:13px 8px 12px;border-radius:18px}#pitch{max-height:none;min-height:0;height:auto}aside{grid-template-columns:1fr 1fr;gap:12px}.panel{padding:16px}.panel:first-child,.panel:nth-child(2){grid-column:1/-1}.note{align-self:center}.field-heading{font-size:10px}h1{font-size:29px}}@media(max-width:420px){aside{grid-template-columns:1fr}.panel,.note{grid-column:1/-1}.field-foot{font-size:12px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="badge" aria-hidden="true">⚽</div><div><h1>Find your space.</h1><p>Move the ball. Watch your team. Learn where to go.</p></div><div class="tag">6 PLAYERS · ONE TEAM</div></header>
+<main>
+<section class="field-panel" aria-label="Interactive soccer field">
+<div class="field-heading"><span>↑ WE ATTACK THIS WAY</span><span>Tap or drag anywhere</span></div>
+<svg id="pitch" viewBox="0 0 600 840" tabindex="0" role="application" aria-label="Soccer positioning field. Tap or drag to move the ball. Use arrow keys to move the ball with a keyboard. Choose a player using the menu or by tapping a blue player." aria-describedby="keyboardHelp">
+<defs><pattern id="grass" width="600" height="144" patternUnits="userSpaceOnUse"><rect width="600" height="144" fill="#26764d"/><rect width="600" height="72" fill="#2b7f53"/></pattern><pattern id="net" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="#c7e1cc" stroke-width=".8"/></pattern></defs>
+<rect x="225" y="15" width="150" height="30" rx="3" fill="url(#net)" stroke="#cce2d2" stroke-width="2"/><rect x="225" y="795" width="150" height="30" rx="3" fill="url(#net)" stroke="#cce2d2" stroke-width="2"/>
+<rect x="30" y="45" width="540" height="750" fill="url(#grass)" rx="2"/>
+<g fill="none" stroke="#c0dfc9" stroke-width="2.4"><rect x="30" y="45" width="540" height="750"/><path d="M30 420H570"/><circle cx="300" cy="420" r="70"/><path d="M165 45V160H435V45 M225 45V90H375V45 M165 795V680H435V795 M225 795V750H375V795"/><path d="M250 160 Q300 205 350 160 M250 680 Q300 635 350 680"/></g>
+<g fill="#c0dfc9"><circle cx="300" cy="420" r="4"/><circle cx="300" cy="132" r="3"/><circle cx="300" cy="708" r="3"/></g>
+<text x="300" y="34" text-anchor="middle" fill="#e4f7e8" font-size="12" font-weight="800">THEIR GOAL</text><text x="300" y="818" text-anchor="middle" fill="#e4f7e8" font-size="12" font-weight="800">OUR GOAL</text>
+<g id="connections"></g><circle id="spot" r="27"/><g id="players"></g>
+<g id="ball"><circle r="14" fill="#fffef8" stroke="#162e26" stroke-width="1.5"/><path d="M0 -7 L7 -2 L4 6 L-4 6 L-7 -2Z M-11 -9L-5 -12L-5 -8L-10 -5Z M10 -9L13 -2L9 -3L7 -7Z M10 8L3 13L3 9L7 5Z M-9 9L-13 2L-9 2L-6 6Z" fill="#253c33"/></g>
+</svg>
+<p id="keyboardHelp" class="field-foot">Move the ⚽ • Tap a player to learn their job</p>
+<div class="legend"><span><i class="dot"></i>Our team</span><span><i class="dot gold"></i>Goalie</span><span>◌ Selected player</span></div>
+</section>
+<aside>
+<section class="panel"><p class="eyebrow">1 / WHO HAS THE BALL?</p><div class="modes"><button id="attack" aria-pressed="true">⚽ We have it</button><button id="defend" aria-pressed="false">🛡 They have it</button></div><p id="teamRule"></p><p id="teamHint"></p></section>
+<section class="panel"><p class="eyebrow">2 / FOLLOW YOUR POSITION</p><div class="choose"><label for="role">I’m playing…</label><select id="role"><option value="st">Striker</option><option value="lm">Left midfield</option><option value="rm">Right midfield</option><option value="ld">Left defender</option><option value="rd">Right defender</option><option value="gk">Goalie</option></select></div><div class="role-title"><span id="roleNumber" class="number">9</span><div><h2 id="roleName">Striker</h2><p id="roleTag">Find space up front</p></div></div><p id="roleAdvice" aria-live="polite"></p><p class="remember" id="remember"></p><label class="toggle"><input type="checkbox" id="lines" checked> Show passing options</label></section>
+<section class="panel"><p class="eyebrow">TRY A PLAY</p><div class="scenarios"><button data-scene="left">↖ Ball on the left</button><button data-scene="right">↗ Ball on the right</button><button data-scene="front">↑ Close to their goal</button><button data-scene="danger">↓ Protect our goal</button></div><button id="reset" style="width:100%;margin-top:8px">↺ Start again</button></section>
+<p class="note"><strong>Coach’s corner:</strong> A simple 2–2–1 shape plus a goalie. These are helpful starting spots, not the only right answers. Real players adjust to teammates, opponents, and your coach’s instructions. Left and right are shown as we face their goal. The ball stays in play; restarts aren’t modeled.</p>
+</aside>
+</main>
+<script>
+'use strict';
+const $=s=>document.querySelector(s),NS='http://www.w3.org/2000/svg';
+const roles=[
+{id:'st',n:9,name:'Striker',short:'Striker',tag:'Find space up front',memory:'Be a passing option. Look at the ball and the goal.'},
+{id:'lm',n:7,name:'Left midfield',short:'Left mid',tag:'Help on the left',memory:'Left is your home side. Help forward AND back.'},
+{id:'rm',n:8,name:'Right midfield',short:'Right mid',tag:'Help on the right',memory:'Right is your home side. Help forward AND back.'},
+{id:'ld',n:3,name:'Left defender',short:'Left D',tag:'Protect the space behind',memory:'If your partner goes to the ball, stay back to help.'},
+{id:'rd',n:4,name:'Right defender',short:'Right D',tag:'Protect the space behind',memory:'If your partner goes to the ball, stay back to help.'},
+{id:'gk',n:1,name:'Goalie',short:'Goalie',tag:'Be ready in front of our goal',memory:'Stay between the ball and our goal. Talk to your team!'}];
+let mode='attack',ball={x:50,y:50},selected='st',active='st',targets={},current={},dragging=false,lastTime=0;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const px=x=>30+x*5.4,py=y=>45+y*7.5;
+function svgEl(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);parent.append(e);return e;}
+for(const r of roles){const g=svgEl('g',{class:'player'+(r.id==='gk'?' goalkeeper':''),'data-role':r.id},$('#players'));svgEl('title',{},g).textContent=r.name;svgEl('circle',{r:26,class:'ring'},g);svgEl('circle',{r:20,class:'body'},g);svgEl('text',{'text-anchor':'middle',y:7,class:'jersey'},g).textContent=r.n;const width=r.short.length*9.8+16;svgEl('rect',{x:-width/2,y:28,width,height:23,rx:7,class:'label-bg'},g);svgEl('text',{'text-anchor':'middle',y:44,class:'label'},g).textContent=r.short;r.el=g;current[r.id]={x:50,y:70};}
+function calculate(){
+ const x=ball.x,y=ball.y,s=x-50;
+ // Each role has a home lane. The whole shape follows the ball up/down the field.
+ if(mode==='attack'){
+ targets={st:{x:50+s*.28,y:clamp(y-24,10,65)},lm:{x:18+s*.17,y:clamp(y+3,23,77)},rm:{x:82+s*.17,y:clamp(y+3,23,77)},ld:{x:34+s*.16,y:clamp(y+29,48,85)},rd:{x:66+s*.16,y:clamp(y+29,48,85)},gk:{x:50+s*.11,y:clamp(89+y*.04,89,93)}};
+ // Pick a plausible ball carrier in the 2–2–1 shape.
+ if(y>85&&x>37&&x<63)active='gk';else if(y>65)active=x<50?'ld':'rd';else if(y<31||(x>35&&x<65&&y<61))active='st';else active=x<50?'lm':'rm';
+ if(active==='gk'){targets.ld={x:24,y:77};targets.rd={x:76,y:77};targets.lm={x:20,y:51};targets.rm={x:80,y:51};targets.st={x:50,y:29};}
+ if(active==='st'){targets.lm.y=clamp(y+17,25,76);targets.rm.y=clamp(y+17,25,76);}
+ if(active==='ld'||active==='rd'){const other=active==='ld'?'rd':'ld';targets[other].y=clamp(y+9,72,88);targets.lm.y=clamp(y-20,35,67);targets.rm.y=clamp(y-20,35,67);targets.st.y=clamp(y-42,15,48);}
+ targets[active]={x:clamp(x+(x<50?4:-4),6,94),y:clamp(y+3,7,93)};
+ }else{
+ targets={st:{x:50+s*.40,y:clamp(y-15,19,61)},lm:{x:32+s*.32,y:clamp(y+13,38,78)},rm:{x:68+s*.32,y:clamp(y+13,38,78)},ld:{x:40+s*.24,y:clamp(y+32,63,89)},rd:{x:60+s*.24,y:clamp(y+32,63,89)},gk:{x:50+s*.12,y:94}};
+ active=y>64?(x<50?'ld':'rd'):(y<29?'st':(x<50?'lm':'rm'));
+ targets[active]={x:clamp(x+(50-x)*.08,6,94),y:clamp(y+7,8,92)};
+ if(active==='ld'||active==='rd'){const other=active==='ld'?'rd':'ld';targets[other]={x:50+s*.20+(active==='ld'?7:-7),y:clamp(y+15,79,91)};}
+ }
+ // Keep markers separated so young players can see the team shape.
+ for(let pass=0;pass<10;pass++)for(let i=0;i<roles.length;i++)for(let j=i+1;j<roles.length;j++){
+ const a=roles[i].id,b=roles[j].id,p=targets[a],q=targets[b],dx=(q.x-p.x)*5.4,dy=(q.y-p.y)*7.5,dist=Math.hypot(dx,dy);
+ if(dist<68){const ux=dist?dx/dist:1,uy=dist?dy/dist:0,shift=(68-dist);const fixedA=a===active||a==='gk',fixedB=b===active||b==='gk';if(!fixedA){p.x-=ux*shift/(fixedB?1:2)/5.4;p.y-=uy*shift/(fixedB?1:2)/7.5;}if(!fixedB){q.x+=ux*shift/(fixedA?1:2)/5.4;q.y+=uy*shift/(fixedA?1:2)/7.5;}}
+ }
+ for(const r of roles){const p=targets[r.id];p.x=clamp(p.x,8,92);p.y=clamp(p.y,7,94);}
+ updateText();
+ $('#ball').setAttribute('transform',`translate(${px(x)} ${py(y)})`);$('#spot').setAttribute('cx',px(x));$('#spot').setAttribute('cy',py(y));
+}
+function updateText(){
+ const r=roles.find(r=>r.id===selected),isActive=selected===active,side=ball.x<44?'left':ball.x>56?'right':'middle';
+ $('#roleNumber').textContent=r.n;$('#roleName').textContent=r.name;$('#roleTag').textContent=r.tag;$('#remember').textContent='Remember: '+r.memory;
+ $('#teamRule').textContent=mode==='attack'?'We have it? Make space!':'They have it? Protect our goal!';
+ $('#teamHint').textContent=mode==='attack'?'One player has the ball. Everyone else gives them a place to pass.':'One player slows the ball down. Teammates stay behind to help.';
+ let advice='';
+ if(mode==='attack'){
+ if(isActive)advice=selected==='gk'?'You have the ball! Look for a defender to pass to.':'You have the ball! Look up. Pass to a teammate in space, or dribble into open space.';
+ else if(selected==='st')advice='Find open space closer to their goal. Give the player with the ball a forward pass.';
+ else if(selected==='lm'||selected==='rm'){const same=(selected==='lm'&&side==='left')||(selected==='rm'&&side==='right');advice=same?'Help near the ball, but leave room! Make an angle so your teammate can pass to you.':'Keep some space on your side. Be ready if your team passes across the field.';}
+ else if(selected==='gk')advice='Move a little toward the ball’s side. Stay ready behind your defenders.';
+ else advice='Stay behind the ball as a safe pass. Be ready to protect our goal if we lose it.';
+ }else{
+ if(isActive)advice='You are the helper closest in this team shape. Get between the ball and our goal. Slow them down!';
+ else if(selected==='gk')advice='Slide toward the ball’s side of the goal. Watch the ball and get your hands ready!';
+ else if(selected==='ld'||selected==='rd')advice='Stay closer to our goal than the ball. Cover behind your teammate—don’t both chase!';
+ else if(selected==='st')advice='Move toward the play. Help stop an easy pass, and be ready when we win the ball.';
+ else advice='Come back toward our goal and tuck toward the middle. Help your defenders.';
+ }
+ $('#roleAdvice').textContent=advice;
+ for(const item of roles)item.el.classList.toggle('selected',item.id===selected);
+ $('#attack').setAttribute('aria-pressed',mode==='attack');$('#defend').setAttribute('aria-pressed',mode==='defend');
+}
+function render(t){const dt=Math.min((t-lastTime)||16,50);lastTime=t;const f=window.matchMedia('(prefers-reduced-motion: reduce)').matches?1:1-Math.exp(-dt/150);
+ for(const r of roles){const p=current[r.id],q=targets[r.id];p.x+=(q.x-p.x)*f;p.y+=(q.y-p.y)*f;r.el.setAttribute('transform',`translate(${px(p.x)} ${py(p.y)})`);}
+ const container=$('#connections');container.replaceChildren();
+ if(mode==='attack'&&$('#lines').checked){const nearby=roles.filter(r=>r.id!==active&&r.id!=='gk').sort((a,b)=>Math.hypot(targets[a.id].x-ball.x,(targets[a.id].y-ball.y)*1.4)-Math.hypot(targets[b.id].x-ball.x,(targets[b.id].y-ball.y)*1.4)).slice(0,2);for(const r of nearby)svgEl('line',{x1:px(ball.x),y1:py(ball.y),x2:px(current[r.id].x),y2:py(current[r.id].y),class:'passline'},container);}
+ requestAnimationFrame(render);
+}
+function place(e){const p=$('#pitch').createSVGPoint();p.x=e.clientX;p.y=e.clientY;const c=p.matrixTransform($('#pitch').getScreenCTM().inverse());ball={x:clamp((c.x-30)/5.4,2,98),y:clamp((c.y-45)/7.5,3,97)};calculate();}
+$('#pitch').addEventListener('pointerdown',e=>{const player=e.target.closest('[data-role]');if(player){selected=player.dataset.role;$('#role').value=selected;updateText();return;}e.preventDefault();dragging=true;$('#pitch').setPointerCapture(e.pointerId);place(e);});
+$('#pitch').addEventListener('pointermove',e=>{if(dragging)place(e);});
+for(const event of ['pointerup','pointercancel','lostpointercapture'])$('#pitch').addEventListener(event,()=>dragging=false);
+$('#pitch').addEventListener('keydown',e=>{const moves={ArrowLeft:[-3,0],ArrowRight:[3,0],ArrowUp:[0,-3],ArrowDown:[0,3]};if(moves[e.key]){e.preventDefault();ball.x=clamp(ball.x+moves[e.key][0],2,98);ball.y=clamp(ball.y+moves[e.key][1],3,97);calculate();}});
+$('#role').addEventListener('change',e=>{selected=e.target.value;updateText();});
+for(const m of ['attack','defend'])$('#'+m).addEventListener('click',()=>{mode=m;calculate();});
+const scenes={left:{x:16,y:43,mode:'attack'},right:{x:84,y:43,mode:'attack'},front:{x:53,y:18,mode:'attack'},danger:{x:28,y:79,mode:'defend'}};
+for(const b of document.querySelectorAll('[data-scene]'))b.addEventListener('click',()=>{const s=scenes[b.dataset.scene];ball={x:s.x,y:s.y};mode=s.mode;calculate();});
+$('#reset').addEventListener('click',()=>{ball={x:50,y:50};mode='attack';selected='st';$('#role').value='st';$('#lines').checked=true;calculate();});
+calculate();for(const r of roles)current[r.id]={...targets[r.id]};requestAnimationFrame(render);
+</script>
+</body></html>
